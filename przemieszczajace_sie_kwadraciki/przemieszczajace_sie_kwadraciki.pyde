@@ -35,4 +35,5 @@ def draw():
     stroke(*lista[index])
 def mousePressed():
     exit()
-    
+
+#1,75, kształty miały się poruszać po innym torze
