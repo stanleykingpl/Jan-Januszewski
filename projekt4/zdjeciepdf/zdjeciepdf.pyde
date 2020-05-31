@@ -16,3 +16,4 @@ def draw():
         i = loadImage("oksy.png")
         image(i, width/2, 135, 140, 70)
         endRecord()
+# 1,5pkt, brak wyboru i uwzględnienia skalowania (gdyby wczytać inne zdjęcie nie zadziała dobrze)
