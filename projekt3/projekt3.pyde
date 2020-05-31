@@ -20,15 +20,15 @@ def setup():
     shape(s, 25, 25)
     
 def draw():
-    if (mousePressed == True):
+    if (mousePressed == True): # miało być na najechanie, a nie klikmnięcie myszą
         text("J", width/2-50, height/2)
         text("J", width/2+50, height/2)
         fill(58, 142, 70)
     else:
         fill(0)
         
-    if keyPressed:
-        if (keyCode == LEFT):
+    if keyPressed: # nie ma potrzeby powielania warunku, wszystko co pod nim wytabiwane sę liczy pod niego
+        if (keyCode == LEFT): # strzałki działają też gdy nic niezaznaczone, a miały zmieniać zaznaczenie między literami, gdy któraś aktywna
             fill(125)
             text("J", width/2-50, height/2)
             fill(255)
@@ -38,14 +38,11 @@ def draw():
             text("J", width/2+50, height/2)
             fill(255)
             text("J", width/2-50, height/2)
-
-    if keyPressed == True:
         fill(0)
         if key == 'j' or key == 'J':
-            text("J", width/2-50, height/2)    
-    if keyPressed == True:
-        fill(0)
-        if key == 'j' or key == 'J':
+            text("J", width/2-50, height/2)
             text("J", width/2+50, height/2)
+            
+# 1,25pkt
 
         
