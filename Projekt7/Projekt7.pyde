@@ -44,3 +44,5 @@ def mouseClicked():
         pet.speak()
         if isinstance(pet, Wolf): 
             pet.gimmePaw()
+            
+# 0,75 pkt, nie dopisałeś klas, a zastąpiłeś moje - pozmieniałeś nazwy, nie nadpisałeś ani nie wywołałeś też odejmowania
