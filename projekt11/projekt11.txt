@@ -1,0 +1,5 @@
+Warsztat samochodowy
+Klient mówi do mechanika: Coś mi stuka w zawieszeniu, chciałem to naprawić
+Mechanik: Ok, zajmiemy się tym. Po czym naprawia zawieszenie, ale podczas tej roboty znalazł jeszcze problemy w układzie hamulcowym, silniku i wyważył koła.
+WZORZEC: fasada
+DLACZEGO: klient który zostawił auto w warsztacie nie jest specjalistą i poprosił o naprawienie czegoś co stuka podczas jazdy, mechanik zaś jest fachowcem i wie, że inne rzeczy nie działające poprawnie mogą mieć zły wpływ na samochód, jak i również na późniejsze stukanie, dlatego naprawił wszystko. Mechanik jest fasadą, która przyjmuje proste polecenia i tłumaczy je na skomplikowane procesy.
