@@ -7,34 +7,19 @@ def draw():
  
     global img
     img = loadImage("cat.jpg")
-
-    image(img, 50,100, 500,500) 
-
+    
     try:
- 
-        f = open("cat.jpg")
-        if f.name == 'cat.jpg':
-            raise Exception
-            
-            
-            
-
-    
-    except FileNotFoundError as e:
-        print(e)
-    except Exception as e:
+        image(img, 50,100, 500,500) 
+    except:
         print ('Nie znaleziono pliku!')
-        rect(20, 75, 550, 550)
-        fill (255, 0, 0, 90)
-    
+        stroke(255, 0, 0, 90)
     else:
+        stroke(0, 0, 255, 90)
+    finally:
         rect(20, 75, 550, 550)
-        fill (0, 0, 255, 90)
         
-        
-        #nie rozumiem dlaczego wyświetla się błąd, że FileNotFoundError jest niezdefiniowany, a gdy zrobimy jakąś najmniejszą edycje np. enter po jakiejś linijce i nie zapiszemy zmian, to działa. Po zapisaniu zmian znowu nie działa
-
-               
+# dziwnie reaguje dlatego, że wówczas znajduje błąd javy, a wychwytujemy dopiero ten Pythona
+#1,5pkt      
 
     
 

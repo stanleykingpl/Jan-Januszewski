@@ -35,23 +35,7 @@ class Customer():
         else:
             self.book = ""
             return False
-        
-class JanekJ():
-    book = "" 
-    haveBook = False
-    def requestBook(self, book): 
-        print("Book You want to borrow is choosen.")
-        self.book = book
-        self.haveBook = True
-        return self.book
-    def returnBook(self): 
-        print("Book which you returning is {}".format(self.book))
-        if self.haveBook:
-            self.haveBook = False
-            return self.book
-        else:
-            self.book = ""
-            return False
+
 
 
 def setup():
@@ -60,7 +44,7 @@ def setup():
     books = ["Naocznosc", "Sens Sztuki", "Harry Potter", "Pan Samochodzik"]
     library = Library(books) 
     Madzia = Customer()
-    Jan = JanekJ()
+    Jan = Customer()
     
 def draw():
     library.displayAvailableBooks()
@@ -74,31 +58,31 @@ def draw():
 def mouseClicked(): 
     if mouseX >100 and mouseX<200:
         if mouseY >10 and mouseY <30:
-            library.lendBook(Madzia.requestBook("Naocznosc")) 
-        if mouseY >40 and mouseY <60:
-            library.addBook(Madzia.returnBook())
-            
-def mouseClicked():
-    if mouseX >100 and mouseX<200:
-        if mouseY >10 and mouseY <30:
+            library.lendBook(Madzia.requestBook("Naocznosc"))
             library.lendBook(Jan.requestBook("Pan Samochodzik")) 
         if mouseY >40 and mouseY <60:
+            library.addBook(Madzia.returnBook())
             library.addBook(Jan.returnBook())
             
 class ZadanieDziesiate(unittest.TestCase):
 
-    def JJ(self):
-        self.Jan = Customer()
+    def test_JJ_2(self): # nazwy testów powinny się zaczynać od test
+        Jan = Customer() # testy powinny być od siebie niezależne, a więc i obiekty zdefiniowane wewnątrz
         books = ["Naocznosc", "Sens Sztuki", "Harry Potter"]
-        self.library = Library(books) 
+        library = Library(books)  # klasa biblioteki nie należy do klasy testó, więc używanie self jest tu błędem
+        library.lendBook(Jan.requestBook("Harry Potter"))
+        self.assertEqual(["Naocznosc", "Sens Sztuki"], library.availableBooks)
+        self.assertEqual(Jan.book, "Harry Potter")
+        self.assertTrue(Jan.haveBook)
 
-
-    def JJ_2(self):
-        self.library.lendBook(self.Jan.requestBook("Harry Potter"))
-        self.assertEqual(["Naocznosc", "Sens Sztuki"], self.library.availableBooks)
-        self.assertEqual(self.Jan.book, "Harry Potter")
-        self.assertTrue(self.Jan.haveBook)
-
-    def JJ_3(self):
-        self.library.addBook("2012")
-        self.assertEqual(["Naocznosc", "Sens Sztuki", "Harry Potter", "2012"], self.library.availableBooks)
+    def test_JJ_3(self):
+        Jan = Customer()
+        books = ["Naocznosc", "Sens Sztuki", "Harry Potter"]
+        library = Library(books) 
+        library.addBook("2012")
+        self.assertEqual(["Naocznosc", "Sens Sztuki", "Harry Potter", "2012"], library.availableBooks)
+        
+if __name__ == '__main__':
+    unittest.main()
+    
+#1,5pkt
